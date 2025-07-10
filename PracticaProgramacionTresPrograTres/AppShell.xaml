@@ -3,13 +3,19 @@
     x:Class="PracticaProgramacionTresPrograTres.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:PracticaProgramacionTresPrograTres"
-    Shell.FlyoutBehavior="Flyout"
-    Title="PracticaProgramacionTresPrograTres">
+    xmlns:views="clr-namespace:PracticaProgramacionTresPrograTres.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Suscripciones">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+    <TabBar>
+        <Tab Title="Crear" Icon="plus.png">
+            <ShellContent ContentTemplate="{DataTemplate views:CrearSuscripcionPage}" />
+        </Tab>
+        <Tab Title="Lista" Icon="list.png">
+            <ShellContent ContentTemplate="{DataTemplate views:ListaSuscripcionesPage}" />
+        </Tab>
+        <Tab Title="Logs" Icon="file.png">
+            <ShellContent ContentTemplate="{DataTemplate views:LogsPage}" />
+        </Tab>
+    </TabBar>
 </Shell>
